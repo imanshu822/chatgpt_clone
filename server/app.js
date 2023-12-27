@@ -47,7 +47,3 @@ app.post("/api/chat", async (req, res) => {
     console.log(error, "error");
   }
 });
-
-app.listen(8000, () => {
-  console.log("Server is running");
-});
