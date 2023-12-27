@@ -10,11 +10,11 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-const fn = (req, res) => {
-  res.send("Hello World!!");
-};
-
-app.get("/", fn);
+app.get("/", (req, res) => {
+  res.send(
+    `<h1>Working pretty fine, click <a href=${process.env.FRONTEND_URL}>here</a> to visit front-end.</h1>`
+  );
+});
 
 app.post("/api/chat", async (req, res) => {
   const { messages } = req.body;
